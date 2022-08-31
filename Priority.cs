@@ -945,6 +945,9 @@ namespace FreeWill
 
             for (int i = 0; i < relevantSkills.Count; i++)
             {
+                const Passion Apathy = (Passion)3;
+                const Passion Natural = (Passion)4;
+                const Passion Critical = (Passion)5;
                 float x;
                 switch (pawn.skills.GetSkill(relevantSkills[i]).passion)
                 {
@@ -957,6 +960,18 @@ namespace FreeWill
                     case Passion.Minor:
                         x = pawn.needs.mood.CurLevel * 0.25f / relevantSkills.Count;
                         add(x, "FreeWillPriorityMinorPassionFor".TranslateSimple() + " " + relevantSkills[i].skillLabel);
+                        continue;
+                    case Apathy:
+                        x = pawn.needs.mood.CurLevel * 0.15f / relevantSkills.Count;
+                        add(x, "FreeWillPriorityApathyPassionFor".TranslateSimple() + " " + relevantSkills[i].skillLabel);
+                        continue;
+                    case Natural:
+                        x = pawn.needs.mood.CurLevel * 0.4f / relevantSkills.Count;
+                        add(x, "FreeWillPriorityNaturalPassionFor".TranslateSimple() + " " + relevantSkills[i].skillLabel);
+                        continue;
+                    case Critical:
+                        x = pawn.needs.mood.CurLevel * 0.75f / relevantSkills.Count;
+                        add(x, "FreeWillPriorityCriticalPassionFor".TranslateSimple() + " " + relevantSkills[i].skillLabel);
                         continue;
                     default:
                         considerInterest(pawn, relevantSkills[i], relevantSkills.Count, workTypeDef);
