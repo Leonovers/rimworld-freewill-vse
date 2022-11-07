@@ -958,19 +958,19 @@ namespace FreeWill
                                 .alwaysDo("FreeWillPriorityMinorPassionFor".Translate(relevantSkills[i].skillLabel))
                                 .add(x, "FreeWillPriorityMinorPassionFor".Translate(relevantSkills[i].skillLabel));
                             continue;
-                        case Passion.Apathy:
+                        case Apathy:
                             x = worldComp.settings.ConsiderPassions * pawn.needs.mood.CurLevel * 0.15f / relevantSkills.Count;
                             this
                                 .alwaysDo("FreeWillPriorityApathyPassionFor".Translate(relevantSkills[i].skillLabel))
                                 .add(x, "FreeWillPriorityApathyPassionFor".Translate(relevantSkills[i].skillLabel));
                             continue;
-                        case Passion.Natural:
+                        case Natural:
                             x = worldComp.settings.ConsiderPassions * pawn.needs.mood.CurLevel * 0.4f / relevantSkills.Count;
                             this
                                 .alwaysDo("FreeWillPriorityNaturalPassionFor".Translate(relevantSkills[i].skillLabel))
                                 .add(x, "FreeWillPriorityNaturalPassionFor".Translate(relevantSkills[i].skillLabel));
                             continue;
-                        case Passion.Critical:
+                        case Critical:
                             x = worldComp.settings.ConsiderPassions * pawn.needs.mood.CurLevel * 0.75f / relevantSkills.Count;
                             this
                                 .alwaysDo("FreeWillPriorityCriticalPassionFor".Translate(relevantSkills[i].skillLabel))
